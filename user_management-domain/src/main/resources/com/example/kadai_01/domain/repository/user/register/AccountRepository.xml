@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.kadai_01.domain.repository.user.register.AccountRepository">
+
+
+	<resultMap id="userResultMap" type="com.example.kadai_01.domain.model.Account">
+		<id property="userId" column="user_id" />
+		<result property="username" column="user_name" />
+		<result property="birthDay" column="birth_date" />
+		<result property="address" column="address" />
+		<result property="telNum" column="tele_num" />
+		<result property="password" column="password" />
+	</resultMap>
+
+	<insert id="createAccount">
+		INSERT INTO t_user
+		(
+		user_id,
+		user_name,
+		birth_date,
+		address,
+		tele_num,
+		password
+		)
+		VALUES
+		(
+		#{userId},
+		#{username},
+		#{birthDay},
+		#{address},
+		#{telNum},
+		#{password}
+		)
+	</insert>
+</mapper>
