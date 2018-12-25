@@ -17,6 +17,7 @@ import org.terasoluna.gfw.common.message.ResultMessage;
 import org.terasoluna.gfw.common.message.ResultMessages;
 
 import com.example.kadai_01.domain.model.Account;
+import com.example.kadai_01.domain.model.Role;
 import com.example.kadai_01.domain.service.user.UserService;
 import com.example.kadai_01.app.form.RegisterForm;
 
@@ -58,16 +59,19 @@ public class UserController {
 	public String registerFinish(@Validated RegisterForm registerForm,Model model,RedirectAttributes attributes){
 		
 		Account account = beanMapper.map(registerForm,Account.class); 
+		Role role = beanMapper.map(registerForm,Role.class);
 		
 		try {
 			userService.create(account);
+			userService.create(role);
+			
 		}catch(BusinessException e) {
 			model.addAttribute(e.getResultMessages());
 			return registerRedo(registerForm,model);
-		}
-		
+		}	
 		attributes.addFlashAttribute(ResultMessages.success().add(
 				ResultMessage.fromText("Succeed")));
+		System.out.print("succeed");
 		return "redirect:/user/register/register?finish";
 	}
 }
