@@ -63,7 +63,7 @@ String birthDay = request.getParameter("birthDay");
 
 		</table>
 		<input type="submit" name="redo" value="やり直し" />
-		<input type="submit" name="finish" value="登録" />
+		<input type="submit" value="登録" />
 	</form:form>
 </body>
 </html>
