@@ -64,8 +64,8 @@ public class UserController {
 		try{
 			Account createdAccount = userService.create(account);
 			Role createdRole = userService.create(role);
-			redirectAttributes.addFlashAttribute(createdAccount);
-			redirectAttributes.addFlashAttribute(createdRole);	
+			redirectAttributes.addFlashAttribute("createdAccount",createdAccount);
+			redirectAttributes.addFlashAttribute("createdRole",createdRole);	
 			
 		}catch(BusinessException e) {
 			model.addAttribute(e.getResultMessages());
@@ -75,7 +75,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value="register", method=RequestMethod.GET, params="finish")
-	public String registerFinish(Account createdAccount, Account createdRole) {
+	public String registerFinish() {
 		return "user/registerFinish";
 	}
 }

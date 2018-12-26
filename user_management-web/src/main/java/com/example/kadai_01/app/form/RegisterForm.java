@@ -1,9 +1,9 @@
 package com.example.kadai_01.app.form;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+//import java.sql.Date;
+//import java.text.ParseException;
+//import java.text.SimpleDateFormat;
 
 
 
@@ -16,7 +16,7 @@ public class RegisterForm implements Serializable {
 
 	private String username;
 
-	private Date birthDay;
+	private String birthDay;
 
 	private String address;
 
@@ -44,14 +44,14 @@ public class RegisterForm implements Serializable {
 		this.username = username;
 	}
 
-	public Date getBirthDay() {
+	public String getBirthDay() {
 		return birthDay;
 	}
 
 	public void setBirthDay(String birthDay) {
-		String strDate = birthDay;
-		Date date = Date.valueOf(strDate);
-		this.birthDay = date;
+		//String strDate = birthDay;
+		//Date date = Date.valueOf(strDate);
+		this.birthDay = birthDay;
 
 	}
 

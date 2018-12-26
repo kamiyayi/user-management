@@ -1,7 +1,7 @@
 package com.example.kadai_01.domain.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+// import java.sql.Date;
 
 
 public class Account implements Serializable {
@@ -12,7 +12,7 @@ public class Account implements Serializable {
 
 	private String username;
 
-	private Date birthDay;
+	private String birthDay;
 
 	private String address;
 
@@ -40,11 +40,11 @@ public class Account implements Serializable {
 		this.username = username;
 	}
 
-	public Date getBirthDay() {
+	public String getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(Date birthDay) {
+	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
 
