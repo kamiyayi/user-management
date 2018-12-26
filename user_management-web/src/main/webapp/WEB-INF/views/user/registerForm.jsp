@@ -14,18 +14,28 @@
 <title>登録フォーム表示</title>
 </head>
 <body>
-	<form:form modelAttribute="registerForm" action="${pageContext.request.contextPath}/user/register">
+	<form:form modelAttribute="registerForm"
+		action="${pageContext.request.contextPath}/user/register">
 		
-	ユーザID : <form:input path="userId"/><br>
-	名前 : <form:input path="username"/><br>
-	生年月日 : <form:input path="birthDay"/><br>
-	住所 : <form:input path="address"/><br>
-	電話番号 : <form:input path="telNum"/><br>
-	権限 : <form:radiobutton path="roles" value="ADMIN" label="ADMIN"/>
-		<form:radiobutton path="roles" value="USER" label="USER"/><br>
-	パスワード : <form:password path="password"/><br>
-	パスワード確認 : <form:password path="confirmPassword"/><br>
-	<input type="submit" name="confirm" value="登録"/>
+	ユーザID : <form:input path="userId" />
+			  <form:error path="userId"/>
+		<br>
+	名前 : <form:input path="username" />
+		<br>
+	生年月日 : <form:input path="birthDay" />
+		<br>
+	住所 : <form:input path="address" />
+		<br>
+	電話番号 : <form:input path="telNum" />
+		<br>
+	権限 : <form:radiobutton path="roles" value="ADMIN" label="ADMIN" />
+		<form:radiobutton path="roles" value="USER" label="USER" />
+		<br>
+	パスワード : <form:password path="password" />
+		<br>
+	パスワード確認 : <form:password path="confirmPassword" />
+		<br>
+		<input type="submit" name="confirm" value="登録" />
 	</form:form>
 </body>
 </html>

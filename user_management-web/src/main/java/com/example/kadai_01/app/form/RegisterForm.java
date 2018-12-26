@@ -1,6 +1,10 @@
 package com.example.kadai_01.app.form;
 
 import java.io.Serializable;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 //import java.sql.Date;
 //import java.text.ParseException;
 //import java.text.SimpleDateFormat;
@@ -11,21 +15,29 @@ public class RegisterForm implements Serializable {
 
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@NotNull
+	@Size(min=4, max=4)
+	@Pattern(regexp="[0-9]")
 	private String userId;
-
+	
+	@Size(min=1)
 	private String username;
 
 	private String birthDay;
-
+	
+	@Size(min=1)
 	private String address;
-
+	
+	@Pattern(regexp="[0-9]")
 	private String telNum;
 
 	private String roles;
-
+	
+	@Size(min=4)
 	private String password;
-
+	
+	@Size(min=4)
 	private String confirmPassword;
 
 	public String getUserId() {
