@@ -18,7 +18,6 @@
 		action="${pageContext.request.contextPath}/user/register">
 		
 	ユーザID : <form:input path="userId" />
-			  <form:error path="userId"/>
 		<br>
 	名前 : <form:input path="username" />
 		<br>

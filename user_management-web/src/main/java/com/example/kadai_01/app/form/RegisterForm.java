@@ -2,15 +2,22 @@ package com.example.kadai_01.app.form;
 
 import java.io.Serializable;
 
+import javax.validation.OverridesAttribute;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import org.terasoluna.gfw.common.*;
 //import java.sql.Date;
 //import java.text.ParseException;
 //import java.text.SimpleDateFormat;
 
+import com.example.kadai_01.domain.validation.Compare;
 
 
+@Compare(left = "password", right = "confirmPassword", operator = com.example.kadai_01.domain.validation.Operator.EQUAL, requireBoth = true)
 public class RegisterForm implements Serializable {
 
 
@@ -18,25 +25,33 @@ public class RegisterForm implements Serializable {
 	
 	@NotNull
 	@Size(min=4, max=4)
-	@Pattern(regexp="[0-9]")
+	@Pattern(regexp="[0-9]*")
 	private String userId;
 	
-	@Size(min=1)
+	@NotNull
+	@Size(max=30)
 	private String username;
-
+	
+	@NotNull
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private String birthDay;
 	
-	@Size(min=1)
+	@NotNull
+	@Size(min=60)
 	private String address;
 	
-	@Pattern(regexp="[0-9]")
+	@NotNull
+	@Size(min=10,max=11)
 	private String telNum;
-
+	
+	@NotNull
 	private String roles;
 	
-	@Size(min=4)
+	@Size(min=6)
+	@Pattern(regexp="[a-zA-Z0-9]*")
 	private String password;
 	
+	@NotNull
 	@Size(min=4)
 	private String confirmPassword;
 
