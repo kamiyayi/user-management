@@ -2,22 +2,17 @@ package com.example.kadai_01.app.form;
 
 import java.io.Serializable;
 
-import javax.validation.OverridesAttribute;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import org.terasoluna.gfw.common.*;
 //import java.sql.Date;
 //import java.text.ParseException;
 //import java.text.SimpleDateFormat;
 
-import com.example.kadai_01.domain.validation.Compare;
 
-
-@Compare(left = "password", right = "confirmPassword", operator = com.example.kadai_01.domain.validation.Operator.EQUAL, requireBoth = true)
 public class RegisterForm implements Serializable {
 
 
@@ -37,7 +32,7 @@ public class RegisterForm implements Serializable {
 	private String birthDay;
 	
 	@NotNull
-	@Size(min=60)
+	@Size(min=6)
 	private String address;
 	
 	@NotNull
@@ -47,12 +42,11 @@ public class RegisterForm implements Serializable {
 	@NotNull
 	private String roles;
 	
+	@NotNull
 	@Size(min=6)
 	@Pattern(regexp="[a-zA-Z0-9]*")
 	private String password;
 	
-	@NotNull
-	@Size(min=4)
 	private String confirmPassword;
 
 	public String getUserId() {
