@@ -24,26 +24,25 @@ public class RegisterForm implements Serializable {
 	private String userId;
 	
 	@NotNull
-	@Size(max=30)
+	@Size(min=1)
 	private String username;
 	
-	@NotNull
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private String birthDay;
 	
 	@NotNull
-	@Size(min=6)
+	@Size(min=1)
 	private String address;
 	
 	@NotNull
-	@Size(min=10,max=11)
+	@Pattern(regexp="[0-9]*")
 	private String telNum;
 	
 	@NotNull
 	private String roles;
 	
 	@NotNull
-	@Size(min=6)
+	@Size(min=4)
 	@Pattern(regexp="[a-zA-Z0-9]*")
 	private String password;
 	

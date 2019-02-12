@@ -19,12 +19,13 @@ String birthDay = request.getParameter("birthDay");
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登録項目確認</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 	<%-- form:form modelAttribute="registerForm">--%>
-	<form:form modelAttribute="registerForm" action="${pageContext.request.contextPath}/user/register">
+	<form:form modelAttribute="registerForm"
+		action="${pageContext.request.contextPath}/user/register">
 
 		<table cellpadding="3">
 			<tr>
@@ -38,10 +39,11 @@ String birthDay = request.getParameter("birthDay");
 				<form:hidden path="username" />
 			</tr>
 			<tr>
-				<th>生年月日: </th>
+				<th>生年月日:</th>
 				<td><c:out value="${registerForm.birthDay}" /></td>
-<%-- 			<td><fmt:formatDate value="${registerForm.birthDay}" pattern="yyyy-MM-dd" /> </td> --%>
-<%--			<form:hidden path="birthDay" value="${registerForm.birthDay}" pattern="yyyy-MM-dd"/> --%>
+				<%-- <td><fmt:formatDate value="${registerForm.birthDay}" pattern="yyyy-MM-dd" /> </td> --%>
+				<form:hidden path="birthDay" value="${registerForm.birthDay}"
+					pattern="yyyy-MM-dd" />
 			</tr>
 			<tr>
 				<th><form:label path="address">住所 : </form:label></th>

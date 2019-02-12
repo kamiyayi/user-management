@@ -14,25 +14,41 @@
 <title>登録フォーム表示</title>
 </head>
 <body>
-	<form:form modelAttribute="registerForm"
+	<form:form modelAttribute="registerForm" class="form-horizontal"
 		action="${pageContext.request.contextPath}/user/register">
-		
-	ユーザID : <form:input path="userId" />
+
+		<form:label path="userId">ユーザID :</form:label>
+		<form:input path="userId" />
+		<form:errors path="userId" cssClass="error-messages" />
 		<br>
-	名前 : <form:input path="username" />
+		<form:label path="username">名前 :</form:label>
+		<form:input path="username" />
+		<form:errors path="username" cssClass="error-messages" />
 		<br>
-	生年月日 : <form:input path="birthDay" />
+		<form:label path="birthDay">生年月日 :</form:label>
+		<form:input path="birthDay" />
+		<form:errors path="birthDay" cssClass="error-messages" />
 		<br>
-	住所 : <form:input path="address" />
+		<form:label path="address">住所 :</form:label>
+		<form:input path="address" />
+		<form:errors path="address" cssClass="error-messages" />
 		<br>
-	電話番号 : <form:input path="telNum" />
+		<form:label path="telNum">電話番号 :</form:label>
+		<form:input path="telNum" />
+		<form:errors path="telNum" cssClass="error-messages" />
 		<br>
-	権限 : <form:radiobutton path="roles" value="ADMIN" label="ADMIN" />
+		<form:label path="roles">権限 :</form:label>
+		<form:radiobutton path="roles" value="ADMIN" label="ADMIN" />
 		<form:radiobutton path="roles" value="USER" label="USER" />
+		<form:errors path="roles" cssClass="error-messages" />
 		<br>
-	パスワード : <form:password path="password" />
+		<form:label path="password">パスワード :</form:label>
+		<form:password path="password" />
+		<form:errors path="password" cssClass="error-messages" />
 		<br>
-	パスワード確認 : <form:password path="confirmPassword" />
+		<form:label path="confirmPassword">パスワード確認 :</form:label>
+		<form:password path="confirmPassword" />
+		<form:errors path="confirmPassword" cssClass="error-messages" />
 		<br>
 		<input type="submit" name="confirm" value="登録" />
 	</form:form>

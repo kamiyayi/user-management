@@ -36,14 +36,14 @@ public class UserController {
 	@Inject
 	PasswordEqualsValidator passwordEqualsValidator;
 
-	@ModelAttribute
+	@ModelAttribute("registerForm")
 	public RegisterForm setUpForm() {
 		RegisterForm registerForm = new RegisterForm();
 		return registerForm;
 	}
 
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
+	@InitBinder("registerForm")
+	public void initBinderForRegisterForm(WebDataBinder binder) {
 		binder.addValidators(passwordEqualsValidator); // (2)
 	}
 
@@ -60,7 +60,7 @@ public class UserController {
 		return "user/registerConfirm";
 	}
 	@RequestMapping(value="register", method=RequestMethod.POST, params="redo")
-	public String registerRedo(@Validated RegisterForm registerForm, Model model) {
+	public String registerRedo(RegisterForm registerForm, Model model) {
 		return "user/registerForm";
 	}
 

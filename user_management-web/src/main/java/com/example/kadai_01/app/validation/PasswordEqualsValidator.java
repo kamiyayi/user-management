@@ -23,7 +23,7 @@ public class PasswordEqualsValidator implements Validator {
 		String confirmPassword = registerForm.getConfirmPassword();
 
 		if(!password.equals(confirmPassword)) {
-			errors.rejectValue("passeword", "PasswordEqualsValidators.registerForm.password","password and confirm password must be same");
+			errors.rejectValue("password", "PasswordEqualsValidators.registerForm.password","Password and Confirm Password must be same");
 		}
 	}
 
