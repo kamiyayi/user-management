@@ -10,7 +10,10 @@ import com.example.kadai_01.domain.model.Role;
 import com.example.kadai_01.domain.repository.user.register.AccountRepository;
 import com.example.kadai_01.domain.repository.user.register.RoleRepository;
 
+//TERASOLUNAでは設定漏れを防ぐために、クラスレベルに@Transactionalを付与することを推奨
 @Transactional
+
+//Serviceクラスは状態を保持しない、Singletonスコープのbeanとしてコンテナに登録する。
 @Service
 public class UserServiceImpl implements UserService{
 	

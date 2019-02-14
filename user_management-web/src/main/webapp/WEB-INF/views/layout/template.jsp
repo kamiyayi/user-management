@@ -8,17 +8,19 @@
     
 </script>
 <c:set var="titleKey">
-    <tiles:insertAttribute name="title" ignore="true" />
+	<tiles:insertAttribute name="title" ignore="true" />
 </c:set>
-<title><spring:message code="${titleKey}" text="user_management" /></title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/app/css/styles.css">
+<title><spring:message code="${titleKey}" text="ユーザ管理システム" /></title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/app/css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <tiles:insertAttribute name="header" />
-       <tiles:insertAttribute name="body" />
-        <hr>
-        <p style="text-align: center; background: #e5eCf9;">Copyright &copy; 20XX CompanyName</p>
-    </div>
+	<div class="container">
+		<tiles:insertAttribute name="header" />
+		<tiles:insertAttribute name="body" />
+		<hr>
+		<p style="text-align: center; background: #e5eCf9;">Copyright
+			&copy; 20XX CompanyName</p>
+	</div>
 </body>
 </html>
